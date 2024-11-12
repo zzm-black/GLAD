@@ -6,7 +6,7 @@
 
 GLAD is a generative LLM-agent system designed to streamline task management and automate the workflow for Kanboard API-based applications. Built with LangChain and integrated with OpenAI’s models, GLAD uses structured prompts and API methods to manage complex, multi-step processes within Kanboard.
 
-![Live Demo](assets/livedemo.gif)
+<img src="assets/livedemo.gif" alt="Live Demo" width="800">
 
 ### Version 1 Features (iKb 1.0)
 - **One-Click KB Code Generation:** Instantly generates KB code based on minimal input.
