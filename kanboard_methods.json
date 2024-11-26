@@ -1,0 +1,43 @@
+{
+  "createProject": {
+    "description": "Creates a new project.",
+    "parameters": ["name", "description", "due_date"],
+    "response": {
+      "project_id": "int",
+      "status": "string"
+    }
+  },
+  "getProjectByName": {
+    "description": "Gets a project by its name.",
+    "parameters": ["name"],
+    "response": {
+      "project_id": "int",
+      "name": "string",
+      "description": "string",
+      "tasks": "array"
+    }
+  },
+  "updateTask": {
+    "description": "Updates an existing task.",
+    "parameters": ["task_id", "title", "description", "due_date", "priority"],
+    "response": {
+      "task_id": "int",
+      "status": "string"
+    }
+  },
+  "assignUserToProject": {
+    "description": "Assigns a user to a project.",
+    "parameters": ["project_id", "user_id"],
+    "response": {
+      "status": "string"
+    }
+  },
+  "getBoard": {
+    "description": "Gets the board of a project.",
+    "parameters": ["project_id"],
+    "response": {
+      "columns": "array",
+      "tasks": "array"
+    }
+  }
+}
