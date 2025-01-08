@@ -1,0 +1,2991 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: GLAD_Fin_Agent_w/o_numpy
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.2
+workflow:
+  conversation_variables:
+  - description: ''
+    id: cf230182-d78a-473f-9b07-77b74c9645c2
+    name: target_achievement_probability
+    value: 0
+    value_type: number
+  - description: ''
+    id: 421bbc66-2eba-46fb-a4ff-73b59fc9482e
+    name: Initial_Investment
+    value: 0
+    value_type: number
+  - description: ''
+    id: 18f34231-cbc4-4a26-a724-58019c1c826b
+    name: Years
+    value: 0
+    value_type: number
+  - description: ''
+    id: 51289a67-a53c-4a9c-9775-4a1fd2ce98fb
+    name: Target_value
+    value: 0
+    value_type: number
+  - description: ''
+    id: ab73c584-c6df-4fb8-bdb1-02a4c1ece099
+    name: captured_info
+    value:
+      Initial_investment: null
+      Target_value: null
+      Years: null
+    value_type: object
+  - description: ''
+    id: 78800ef8-a77e-4845-b0df-4e5b4cbb771f
+    name: risk_tolerance
+    value: ''
+    value_type: string
+  - description: ''
+    id: 427ebf67-9f95-4556-a26c-c0fcb6820b30
+    name: total_questions
+    value: 12
+    value_type: number
+  - description: ''
+    id: eaa1528c-7f79-4f3b-b4e1-3df0cba920f5
+    name: risk_value
+    value: 0
+    value_type: number
+  - description: ''
+    id: 635608ba-13ee-476a-aa37-d917170f0c64
+    name: total_score
+    value: 0
+    value_type: number
+  - description: ''
+    id: 58c82206-24ca-4a5b-90f1-3a004054a34f
+    name: quiz_questions
+    value:
+    - options:
+      - A. A real gambler
+      - B. Willing to take risks after completing adequate research
+      - C. Cautious
+      - D. A real risk avoider
+      question: In general, how would your best friend describe you as a risk taker?
+      scores:
+        A: 4
+        B: 3
+        C: 2
+        D: 1
+    - options:
+      - A. 1,000 in cash
+      - B. A 50% chance at winning 5,000
+      - C. A 25% chance at winning 10,000
+      - D. A 5% chance at winning 100,000
+      question: You are on a TV game show and can choose one of the following. Which
+        would you take?
+      scores:
+        A: 1
+        B: 2
+        C: 3
+        D: 4
+    - options:
+      - A. Cancel the vacation
+      - B. Take a much more modest vacation
+      - C. Go as scheduled, reasoning that you need the time to prepare for a job
+        search
+      - D. Extend your vacation, because this might be your last chance to go first-class
+      question: 'You have just finished saving for a ''once-in-a-lifetime'' vacation.
+        Three weeks before you plan to leave, you lose your job. You would:'
+      scores:
+        A: 1
+        B: 2
+        C: 3
+        D: 4
+    - options:
+      - A. Deposit it in a bank account, money market account, or an insured CD
+      - B. Invest it in safe high-quality bonds or bond mutual funds
+      - C. Invest it in stocks or stock mutual funds
+      question: If you unexpectedly received $20,000 to invest, what would you do?
+      scores:
+        A: 1
+        B: 2
+        C: 3
+    - options:
+      - A. Not at all comfortable
+      - B. Somewhat comfortable
+      - C. Very comfortable
+      question: In terms of experience, how comfortable are you investing in stocks
+        or stock mutual funds?
+      scores:
+        A: 1
+        B: 2
+        C: 3
+    - options:
+      - A. Loss
+      - B. Uncertainty
+      - C. Opportunity
+      - D. Thrill
+      question: When you think of the word 'risk,' which of the following words comes
+        to mind first?
+      scores:
+        A: 1
+        B: 2
+        C: 3
+        D: 4
+    - options:
+      - A. Hold the bonds
+      - B. Sell the bonds, put half the proceeds into money market accounts and the
+        other half into hard assets
+      - C. Sell the bonds and put the total proceeds into hard assets
+      - D. Sell the bonds, put all the money into hard assets, and borrow additional
+        money to buy more
+      question: Some experts are predicting prices of assets such as gold, jewels,
+        collectibles, and real estate to increase in value; bond prices may fall.
+        Most of your investment assets are now in high-interest government bonds.
+        What would you do?
+      scores:
+        A: 1
+        B: 2
+        C: 3
+        D: 4
+    - options:
+      - A. $200 gain best case; 0 gain/loss worst case
+      - B. 800 gain best case; 200 loss worst case
+      - C. 2,600 gain best case; 800 loss worst case
+      - D. 4,800 gain best case; 2,400 loss worst case
+      question: Given the best and worst case returns of the four investment choices
+        below, which would you prefer?
+      scores:
+        A: 1
+        B: 2
+        C: 3
+        D: 4
+    - options:
+      - A. A sure gain of 500
+      - B. A 50% chance to gain 1,000 and a 50% chance to gain nothing
+      question: 'In addition to whatever you own, you have been given 1,000. You are
+        now asked to choose between:'
+      scores:
+        A: 1
+        B: 3
+    - options:
+      - A. A sure loss of 500
+      - B. A 50% chance to lose 1,000 and a 50% chance to lose nothing
+      question: 'In addition to whatever you own, you have been given 2,000. You are
+        now asked to choose between:'
+      scores:
+        A: 1
+        B: 3
+    - options:
+      - A. A savings account or money market mutual fund
+      - B. A mutual fund that owns stocks and bonds
+      - C. A portfolio of 15 common stocks
+      - D. Commodities like gold, silver, and oil
+      question: Suppose a relative left you an inheritance of 100,000, stipulating
+        in the will that you invest ALL the money in ONE of the following choices.
+        Which one would you select?
+      scores:
+        A: 1
+        B: 2
+        C: 3
+        D: 4
+    - options:
+      - A. 60% in low-risk investments, 30% in medium-risk investments, 10% in high-risk
+        investments
+      - B. 30% in low-risk investments, 40% in medium-risk investments, 30% in high-risk
+        investments
+      - C. 10% in low-risk investments, 40% in medium-risk investments, 50% in high-risk
+        investments
+      question: If you had to invest 20,000, which of the following investment choices
+        would you find most appealing?
+      scores:
+        A: 1
+        B: 2
+        C: 3
+    - options:
+      - A. Nothing
+      - B. One month's salary
+      - C. Three months' salary
+      - D. Six months' salary
+      question: Your trusted friend and neighbor, an experienced geologist, is putting
+        together a group of investors to fund an exploratory gold mining venture.
+        The venture could pay back 50 to 100 times the investment if successful. If
+        the mine is a bust, the entire investment is worthless. Your friend estimates
+        the chance of success is only 20%. If you had the money, how much would you
+        invest?
+      scores:
+        A: 1
+        B: 2
+        C: 3
+        D: 4
+    value_type: array[object]
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: '您好！我是您的 GLAD智能财富管理助理，很高兴为您服务！
+
+      为了更好地帮助您规划投资目标，我们需要先了解一些基本信息，包括您的目标金额、投资年限以及初始资金。这些信息将帮助我们为您制定更精准的投资计划。
+
+
+      请随意告诉我您的想法，比如您希望几年内存到多少钱，或者目前的投资资金有多少。如果有不确定的地方，也没关系，我会一步步引导您完成。
+
+
+      那么，我们可以开始了！您最希望通过投资实现的目标是什么呢？”'
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: code
+      id: 1733798979705-source-1733833897303-target
+      source: '1733798979705'
+      sourceHandle: source
+      target: '1733833897303'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: assigner
+      id: 1733833897303-source-1733833852217-target
+      source: '1733833897303'
+      sourceHandle: source
+      target: '1733833852217'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: assigner
+      id: 1733833897303-source-1733886809426-target
+      source: '1733833897303'
+      sourceHandle: source
+      target: '1733886809426'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: answer
+      id: 1733833852217-source-1733886965391-target
+      source: '1733833852217'
+      sourceHandle: source
+      target: '1733886965391'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: assigner
+      id: 1735117781150-source-1735180215191-target
+      source: '1735117781150'
+      sourceHandle: source
+      target: '1735180215191'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: if-else
+      id: 1735185434875-source-1733885715898-target
+      source: '1735185434875'
+      sourceHandle: source
+      target: '1733885715898'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: if-else
+      id: 1735185449858-source-1733885715898-target
+      source: '1735185449858'
+      sourceHandle: source
+      target: '1733885715898'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: if-else
+      id: 1735185477205-source-1733885715898-target
+      source: '1735185477205'
+      sourceHandle: source
+      target: '1733885715898'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: code
+      id: 1735180215191-source-1735184419289-target
+      source: '1735180215191'
+      sourceHandle: source
+      target: '1735184419289'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: answer
+      id: 1733885715898-false-1735181527281-target
+      source: '1733885715898'
+      sourceHandle: 'false'
+      target: '1735181527281'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: answer
+      id: 1733885715898-true-1735201987962-target
+      source: '1733885715898'
+      sourceHandle: 'true'
+      target: '1735201987962'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1735116542145-source-1735117781150-target
+      source: '1735116542145'
+      sourceHandle: source
+      target: '1735117781150'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: code
+      id: 1733886965391-source-1735204551140-target
+      source: '1733886965391'
+      sourceHandle: source
+      target: '1735204551140'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 1735204551140-source-1735267153117-target
+      source: '1735204551140'
+      sourceHandle: source
+      target: '1735267153117'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: assigner
+      id: 1735204551140-source-1735269032922-target
+      source: '1735204551140'
+      sourceHandle: source
+      target: '1735269032922'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 1735267153117-source-1735204966811-target
+      source: '1735267153117'
+      sourceHandle: source
+      target: '1735204966811'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: if-else
+      id: 1733794419614-source-1735269189290-target
+      source: '1733794419614'
+      sourceHandle: source
+      target: '1735269189290'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: parameter-extractor
+      id: 1735184419289-source-1735185358990-target
+      source: '1735184419289'
+      sourceHandle: source
+      target: '1735185358990'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 1735185358990-source-1735185477205-target
+      source: '1735185358990'
+      sourceHandle: source
+      target: '1735185477205'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: parameter-extractor
+      id: 1735184419289-source-1735185231558-target
+      source: '1735184419289'
+      sourceHandle: source
+      target: '1735185231558'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 1735185231558-source-1735185449858-target
+      source: '1735185231558'
+      sourceHandle: source
+      target: '1735185449858'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: parameter-extractor
+      id: 1735184419289-source-1735184949377-target
+      source: '1735184419289'
+      sourceHandle: source
+      target: '1735184949377'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 1735184949377-source-1735185434875-target
+      source: '1735184949377'
+      sourceHandle: source
+      target: '1735185434875'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1735271615576-source-17352845716900-target
+      source: '1735271615576'
+      sourceHandle: source
+      target: '17352845716900'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: assigner
+      id: 17352845716900-source-17352846644760-target
+      source: '17352845716900'
+      sourceHandle: source
+      target: '17352846644760'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: if-else
+      id: 17352846644760-source-1735284588987-target
+      source: '17352846644760'
+      sourceHandle: source
+      target: '1735284588987'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: answer
+      id: 1735284588987-false-1735284623598-target
+      source: '1735284588987'
+      sourceHandle: 'false'
+      target: '1735284623598'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: code
+      id: 1735284588987-true-17352868824950-target
+      source: '1735284588987'
+      sourceHandle: 'true'
+      target: '17352868824950'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: parameter-extractor
+      id: 17352868824950-source-17352869199450-target
+      source: '17352868824950'
+      sourceHandle: source
+      target: '17352869199450'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: parameter-extractor
+      id: 17352868824950-source-17352869263600-target
+      source: '17352868824950'
+      sourceHandle: source
+      target: '17352869263600'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: parameter-extractor
+      id: 17352868824950-source-17352869303110-target
+      source: '17352868824950'
+      sourceHandle: source
+      target: '17352869303110'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 17352869303110-source-17352869885610-target
+      source: '17352869303110'
+      sourceHandle: source
+      target: '17352869885610'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 17352869199450-source-17352869819430-target
+      source: '17352869199450'
+      sourceHandle: source
+      target: '17352869819430'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: assigner
+      id: 17352869263600-source-17352869856580-target
+      source: '17352869263600'
+      sourceHandle: source
+      target: '17352869856580'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: code
+      id: 17352869885610-source-17352870777090-target
+      source: '17352869885610'
+      sourceHandle: source
+      target: '17352870777090'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: code
+      id: 17352869856580-source-17352870777090-target
+      source: '17352869856580'
+      sourceHandle: source
+      target: '17352870777090'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: assigner
+        targetType: code
+      id: 17352869819430-source-17352870777090-target
+      source: '17352869819430'
+      sourceHandle: source
+      target: '17352870777090'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: llm
+      id: 17352870777090-source-17352871123770-target
+      source: '17352870777090'
+      sourceHandle: source
+      target: '17352871123770'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 17352871123770-source-1735287134290-target
+      source: '17352871123770'
+      sourceHandle: source
+      target: '1735287134290'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: if-else
+      id: 1735269189290-true-1735269317905-target
+      source: '1735269189290'
+      sourceHandle: 'true'
+      target: '1735269317905'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: if-else
+      id: 1735269189290-false-17352023906520-target
+      source: '1735269189290'
+      sourceHandle: 'false'
+      target: '17352023906520'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: code
+      id: 17352023906520-true-1733796492475-target
+      source: '17352023906520'
+      sourceHandle: 'true'
+      target: '1733796492475'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 17352023906520-false-1735116542145-target
+      source: '17352023906520'
+      sourceHandle: 'false'
+      target: '1735116542145'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1735269317905-true-1735271615576-target
+      source: '1735269317905'
+      sourceHandle: 'true'
+      target: '1735271615576'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: answer
+      id: 1735269317905-false-1735808838926-target
+      source: '1735269317905'
+      sourceHandle: 'false'
+      target: '1735808838926'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: if-else
+      id: 1733796492475-source-1735870544062-target
+      source: '1733796492475'
+      sourceHandle: source
+      target: '1735870544062'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: if-else
+      id: 1735870544062-true-1733798927663-target
+      source: '1735870544062'
+      sourceHandle: 'true'
+      target: '1733798927663'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: assigner
+      id: 1735870544062-true-1733796682269-target
+      source: '1735870544062'
+      sourceHandle: 'true'
+      target: '1733796682269'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: assigner
+      id: 1735870544062-true-1733796695088-target
+      source: '1735870544062'
+      sourceHandle: 'true'
+      target: '1733796695088'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: answer
+      id: 1733798927663-true-1733798959337-target
+      source: '1733798927663'
+      sourceHandle: 'true'
+      target: '1733798959337'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: answer
+      id: 1733798927663-false-1733798979705-target
+      source: '1733798927663'
+      sourceHandle: 'false'
+      target: '1733798979705'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: answer
+      id: 1735870544062-false-1735870633012-target
+      source: '1735870544062'
+      sourceHandle: 'false'
+      target: '1735870633012'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables: []
+      height: 54
+      id: '1733794419614'
+      position:
+        x: -1977.2049026392226
+        y: -132.0712917959381
+      positionAbsolute:
+        x: -1977.2049026392226
+        y: -132.0712917959381
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(quiz_questions: list, user_input: str, total_score: int =\
+          \ 0,total_questions:int = 12) -> dict:\n    \"\"\"\n    处理单次用户回答，返回更新后的得分、问题列表、下一问题及选项，并显示剩余问题数量。\n\
+          \n    参数：\n    - quiz_questions (list): 当前剩余的问题列表。\n    - user_input (str):\
+          \ 用户输入的答案 (A, B, C, 或 D)。\n    - total_score (int): 当前累计得分。\n\n    返回：\n\
+          \    - dict: 包含更新后的总得分、下一问题文本、选项列表、剩余问题列表，以及是否有错误。\n    \"\"\"\n    # 确保有问题可以回答\n\
+          \    if not quiz_questions:\n        return {\n            \"error\": None,\
+          \  # 没有错误，因为问题列表为空\n            \"total_score\": total_score,\n        \
+          \    \"next_question_text\": None,\n            \"next_question_options\"\
+          : None,\n            \"questions_remaining\": [],\n            \"questions_remaining_count\"\
+          : 0  # 剩余问题数量为 0\n        }\n    \n    # 获取当前问题\n    current_question =\
+          \ quiz_questions[0]\n    question_text = current_question.get(\"question\"\
+          , \"\")\n    options = current_question.get(\"options\", [])\n    scores\
+          \ = current_question.get(\"scores\", {})\n\n    # 验证用户输入\n    user_input\
+          \ = user_input.strip().upper()  # 标准化输入\n    if user_input not in scores:\n\
+          \        return {\n            \"error\": f\"Invalid input '{user_input}'.\
+          \ Please select a valid option\",\n            \"total_score\": total_score,\n\
+          \            \"next_question_text\": question_text,\n            \"next_question_options\"\
+          : options,\n            \"questions_remaining\": quiz_questions,\n     \
+          \       \"questions_remaining_count\": len(quiz_questions)  # 返回当前剩余问题数量\n\
+          \        }\n    \n    # 更新分数\n    total_score += scores[user_input]\n  \
+          \  \n    # 移除已回答的问题\n    remaining_questions = quiz_questions[1:]  # 删除第一个问题\n\
+          \n    # 获取下一问题文本和选项\n    if remaining_questions:\n        next_question\
+          \ = remaining_questions[0]\n        next_question_text = next_question.get(\"\
+          question\", \"\")\n        next_question_options = next_question.get(\"\
+          options\", [])\n    else:\n        next_question_text = None\n        next_question_options\
+          \ = None\n\n    # 返回结果\n    return {\n        \"error\": None,  # 清空错误，因为回答有效\n\
+          \        \"total_score\": total_score,\n        \"next_question_text\":\
+          \ next_question_text,\n        \"next_question_options\": next_question_options,\n\
+          \        \"questions_remaining\": remaining_questions,\n        \"questions_remaining_count\"\
+          : len(remaining_questions)  # 剩余问题数量\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          error:
+            children: null
+            type: string
+          next_question_options:
+            children: null
+            type: array[string]
+          next_question_text:
+            children: null
+            type: string
+          questions_remaining:
+            children: null
+            type: array[object]
+          questions_remaining_count:
+            children: null
+            type: number
+          total_score:
+            children: null
+            type: number
+        selected: false
+        title: Questions
+        type: code
+        variables:
+        - value_selector:
+          - conversation
+          - quiz_questions
+          variable: quiz_questions
+        - value_selector:
+          - conversation
+          - total_score
+          variable: total_score
+        - value_selector:
+          - sys
+          - query
+          variable: user_input
+        - value_selector:
+          - conversation
+          - total_questions
+          variable: total_questions
+      height: 54
+      id: '1733796492475'
+      position:
+        x: -1032.4324728430827
+        y: 366.9537614077794
+      positionAbsolute:
+        x: -1032.4324728430827
+        y: 366.9537614077794
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - total_score
+        desc: ''
+        input_variable_selector:
+        - '1733796492475'
+        - total_score
+        selected: false
+        title: 变量赋值
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '1733796682269'
+      position:
+        x: -400.86947352501875
+        y: 211.28221668348988
+      positionAbsolute:
+        x: -400.86947352501875
+        y: 211.28221668348988
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - quiz_questions
+        desc: ''
+        input_variable_selector:
+        - '1733796492475'
+        - questions_remaining
+        selected: false
+        title: 变量赋值 2
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '1733796695088'
+      position:
+        x: -400.86947352501875
+        y: 385.61341178134387
+      positionAbsolute:
+        x: -400.86947352501875
+        y: 385.61341178134387
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 8f9b26b9-5380-4030-9fa2-314dec7756dc
+            value: ''
+            varType: string
+            variable_selector:
+            - '1733796492475'
+            - next_question_text
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 126
+      id: '1733798927663'
+      position:
+        x: -394.8821064202384
+        y: 23.524475763226263
+      positionAbsolute:
+        x: -394.8821064202384
+        y: 23.524475763226263
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: 'Next Question:{{#1733796492475.next_question_text#}}
+
+          {{#1733796492475.next_question_options#}}
+
+          Questions Remain:{{#1733796492475.questions_remaining_count#}}'
+        desc: ''
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 172
+      id: '1733798959337'
+      position:
+        x: 12.340525893540985
+        y: 181.19180952244255
+      positionAbsolute:
+        x: 12.340525893540985
+        y: 181.19180952244255
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '感谢您的回答，所有的问题都已回答完毕！
+
+          '
+        desc: ''
+        selected: false
+        title: 直接回复 2
+        type: answer
+        variables: []
+      height: 116
+      id: '1733798979705'
+      position:
+        x: 12.340525893540985
+        y: 427.64678850631833
+      positionAbsolute:
+        x: 12.340525893540985
+        y: 427.64678850631833
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - risk_value
+        desc: ''
+        input_variable_selector:
+        - '1733833897303'
+        - acceptable_volatility
+        selected: false
+        title: 变量赋值 3
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '1733833852217'
+      position:
+        x: 741.360163778661
+        y: 243.29097386585886
+      positionAbsolute:
+        x: 741.360163778661
+        y: 243.29097386585886
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(total_score: int) -> dict:\n    \"\"\"\n    根据总分计算可接受的资产波动率。\n\
+          \n    参数：\n    - total_score (int): 用户的测试总分。\n\n    返回：\n    - dict: 包含风险承受能力描述和计算的波动率值。\n\
+          \    \"\"\"\n    # 定义参数\n    base_volatility = 10  # 起始波动率（百分比）\n    score_factor\
+          \ = 1.5   # 每分增加的波动率\n    min_score = 18       # 最低分数\n\n    \n\n    # 计算波动率\n\
+          \    acceptable_volatility = base_volatility + score_factor * (total_score\
+          \ - min_score)\n\n    # 风险类型描述\n    if acceptable_volatility <= 8:\n   \
+          \     risk_tolerance = \"Low risk tolerance (conservative investor)\"\n\
+          \    elif acceptable_volatility <= 12:\n        risk_tolerance = \"Below-average\
+          \ risk tolerance\"\n    elif acceptable_volatility <= 18:\n        risk_tolerance\
+          \ = \"Average/moderate risk tolerance\"\n    elif acceptable_volatility\
+          \ <= 25:\n        risk_tolerance = \"Above-average risk tolerance\"\n  \
+          \  else:\n        risk_tolerance = \"High risk tolerance (aggressive investor)\"\
+          \n\n    return {\n        \"risk_tolerance\": risk_tolerance,\n        \"\
+          acceptable_volatility\": acceptable_volatility\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          acceptable_volatility:
+            children: null
+            type: number
+          risk_tolerance:
+            children: null
+            type: string
+        selected: false
+        title: risk_tolerance
+        type: code
+        variables:
+        - value_selector:
+          - conversation
+          - total_score
+          variable: total_score
+      height: 54
+      id: '1733833897303'
+      position:
+        x: 398.20675152171
+        y: 427.64678850631833
+      positionAbsolute:
+        x: 398.20675152171
+        y: 427.64678850631833
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 4f2d355f-109f-4bb5-ab1e-4e2577e850b2
+            value: ''
+            varType: number
+            variable_selector:
+            - conversation
+            - Target_value
+          - comparison_operator: not empty
+            id: 152fa14a-4639-4311-8c3d-6bc588a146d1
+            value: ''
+            varType: number
+            variable_selector:
+            - conversation
+            - Years
+          - comparison_operator: not empty
+            id: 0add3882-bf40-4289-ad61-dba40e2f303f
+            value: ''
+            varType: number
+            variable_selector:
+            - conversation
+            - Initial_Investment
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 2
+        type: if-else
+      height: 178
+      id: '1733885715898'
+      position:
+        x: 1036.5867932438725
+        y: -377.806244101639
+      positionAbsolute:
+        x: 1036.5867932438725
+        y: -377.806244101639
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - risk_tolerance
+        desc: ''
+        input_variable_selector:
+        - '1733833897303'
+        - risk_tolerance
+        selected: false
+        title: 变量赋值 4
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '1733886809426'
+      position:
+        x: 710.4987299277134
+        y: 508.0085790142997
+      positionAbsolute:
+        x: 710.4987299277134
+        y: 508.0085790142997
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '您的风险评估类型为：{{#1733833897303.risk_tolerance#}}
+
+          下面我们将为您进行资产充足性分析，判断基于您的情况能否实现您的目标...'
+        desc: ''
+        selected: false
+        title: 直接回复 3
+        type: answer
+        variables: []
+      height: 151
+      id: '1733886965391'
+      position:
+        x: 1161.3838958986314
+        y: 350.0730072939061
+      positionAbsolute:
+        x: 1161.3838958986314
+        y: 350.0730072939061
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 7d6cf6a0-f867-4b29-9f8e-81872262b370
+          role: system
+          text: "你是一位专业的财富管理助理，帮助用户明确投资目标。对于用户的输入，你需要：\n\n1. 根据用户已提供的信息分类、提取关键内容。\n\
+            2. 分析当前缺失的信息，并根据上下文动态生成补充问题，问题需灵活自然且避免模板化。\n3. 在多轮对话中可以参考历史对话信息做出回复。\n\
+            3. 输出结果严格按照以下格式：\n   - think: 你如何推断用户的输入内容和背景。\n   - captured_info: 用户已提供的投资信息。\n\
+            \   - next_question: 如果信息不完整，生成动态、自然的问题，推动用户补充信息。\n\n示例 1：用户提供部分明确信息\n\
+            \n用户输入：\n“我打算存到300万。”\n\n输出：\n\n\n{\n  \"think\": \"用户提供了明确的投资目标金额，但未说明计划年限和初始资金。\"\
+            ,\n  \"captured_info\": {\n    \"Target_value\": \"300万\",\n    \"Years\"\
+            : null,\n    \"Initial_investment\": null\n  },\n  \"next_question\":\
+            \ \"请问您计划在多长时间内实现这一目标？比如5年、10年或更长？\"\n}\n\n\n示例 2：用户提供全部信息\n\n用户输入：\n\
+            “我希望10年内存够500万，现在有50万作为启动资金。”\n\n输出：\n\n\n{\n  \"think\": \"用户明确提供了投资目标金额、年限以及初始资金，信息完整。\"\
+            ,\n  \"captured_info\": {\n    \"Target_value\": \"500万\",\n    \"Years\"\
+            : \"10年\",\n    \"Initial_investment\": \"50万\"\n  },\n  \"next_question\"\
+            : null\n}\n\n\n示例 3：用户提供模糊信息\n\n用户输入：\n“我想攒点钱。”\n\n输出：\n\n\n{\n  \"think\"\
+            : \"用户提供的信息模糊，未说明具体的目标金额、年限或初始资金。\",\n  \"captured_info\": {\n    \"Target_value\"\
+            : null,\n    \"Years\": null,\n    \"Initial_investment\": null\n  },\n\
+              \"next_question\": \"请问您的投资目标金额是多少呢？比如您希望最终存到500万？\"\n}\n\n\n示例 4：用户提供年限信息\n\
+            \n用户输入：\n“我想看看10年的投资计划。”\n\n输出：\n\n\n{\n  \"think\": \"用户明确提供了投资年限，但未说明目标金额或初始资金。\"\
+            ,\n  \"captured_info\": {\n    \"Target_value\": null,\n    \"Years\"\
+            : \"10年\",\n    \"Initial_investment\": null\n  },\n  \"next_question\"\
+            : \"请问您的投资目标金额是多少呢？比如您希望在10年内存到500万？\"\n}\n\n\n示例 5：用户提供初始资金\n\n用户输入：\n\
+            “我目前有80万作为启动资金。”\n\n输出：\n\n\n{\n  \"think\": \"用户明确提供了初始资金，但未说明目标金额和年限。\"\
+            ,\n  \"captured_info\": {\n    \"Target_value\": null,\n    \"Years\"\
+            : null,\n    \"Initial_investment\": \"80万\"\n  },\n  \"next_question\"\
+            : \"请问您的投资目标金额是多少呢？比如您希望最终存到500万？\"\n}\n\n\n示例 6：用户提供目标金额和初始资金\n\n用户输入：\n\
+            “我想通过投资存到500万，现在有100万。”\n\n输出：\n\n\n{\n  \"think\": \"用户提供了投资目标金额和初始资金，但未说明计划年限。\"\
+            ,\n  \"captured_info\": {\n    \"Target_value\": \"500万\",\n    \"Years\"\
+            : null,\n    \"Initial_investment\": \"100万\"\n  },\n  \"next_question\"\
+            : \"请问您计划在多长时间内实现这一目标？比如5年、10年或更长？\"\n}\n\n\n示例 7：用户重复提供已知信息\n\n用户输入：\n\
+            “我已经说了，我的目标是500万。”\n\n输出：\n\n\n{\n  \"think\": \"用户重复提供了已知的投资目标金额，但未提供计划年限和初始资金。\"\
+            ,\n  \"captured_info\": {\n    \"Target_value\": \"500万\",\n    \"Years\"\
+            : null,\n    \"Initial_investment\": null\n  },\n  \"next_question\":\
+            \ \"请问您计划在多长时间内实现这一目标？比如5年、10年或更长？\"\n}\n\n\n示例 8：用户提供无关信息\n\n用户输入：\n\
+            “最近投资市场情况如何？”\n\n输出：\n\n\n{\n  \"think\": \"用户提供了与当前任务无关的信息，需进一步引导。\"\
+            ,\n  \"captured_info\": {\n    \"Target_value\": null,\n    \"Years\"\
+            : null,\n    \"Initial_investment\": null\n  },\n  \"next_question\":\
+            \ \"请问您的投资目标金额是多少呢？比如您希望最终存到500万？\"\n}\n\n示例 9：用户更改信息\n用户输入：\n“说错了，5 年”\n\
+            输出：\n{\n  \"think\": \"用户重复了投资年限但与记录中的不同，修改信息\",\n  \"captured_info\"\
+            : {\n    \"Target_value\": null,\n    \"Years\": \"5 年\",\n    \"Initial_investment\"\
+            : null\n  },\n  \"next_question\": \"请问您的投资目标金额是多少呢？比如您希望最终存到500万？\"\n\
+            }\n\n"
+        selected: false
+        title: 信息收集
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1735116542145'
+      position:
+        x: -931.7490590511882
+        y: -132.0712917959381
+      positionAbsolute:
+        x: -931.7490590511882
+        y: -132.0712917959381
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(json_str: str) -> dict:\n    # 获取嵌套 JSON 字符串\n\
+          \    json_str = json_str.replace(\" \", \" \")\n    nested_data = json.loads(json_str)\n\
+          \    \n    \n    # 提取 captured_info 和 next_question\n    captured_info =\
+          \ nested_data.get(\"captured_info\", {})\n    next_question = nested_data.get(\"\
+          next_question\", None)\n    \n    # 返回结果\n    return {\n        \"captured_info\"\
+          : captured_info,\n        \"next_question\": next_question\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          captured_info:
+            children: null
+            type: object
+          next_question:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 3
+        type: code
+        variables:
+        - value_selector:
+          - '1735116542145'
+          - text
+          variable: json_str
+      height: 54
+      id: '1735117781150'
+      position:
+        x: -643.84138465253
+        y: -132.0712917959381
+      positionAbsolute:
+        x: -643.84138465253
+        y: -132.0712917959381
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - captured_info
+        desc: ''
+        input_variable_selector:
+        - '1735117781150'
+        - captured_info
+        selected: false
+        title: captured_info
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '1735180215191'
+      position:
+        x: -338.9597368750593
+        y: -132.0712917959381
+      positionAbsolute:
+        x: -338.9597368750593
+        y: -132.0712917959381
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1735117781150.next_question#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 4
+        type: answer
+        variables: []
+      height: 103
+      id: '1735181527281'
+      position:
+        x: 1363.2934686056578
+        y: -311.16009393125375
+      positionAbsolute:
+        x: 1363.2934686056578
+        y: -311.16009393125375
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(captured_info: object) -> dict:\n    \"\"\"\n    解析 captured_info\
+          \ 对象并提取 Target_value, Years 和 Initial_investment。\n\n    Args:\n       \
+          \ captured_info (object): 包含投资目标金额、年限和初始资金的对象。\n\n    Returns:\n       \
+          \ object: 包含解析后的 Target_value, Years 和 Initial_investment 的对象。\n    \"\"\
+          \"\n    # 默认值\n    Target_value = captured_info.get(\"Target_value\", None)\n\
+          \    Years = captured_info.get(\"Years\", None)\n    Initial_investment\
+          \ = captured_info.get(\"Initial_investment\", None)\n\n    # 返回解析结果\n  \
+          \  return {\n        \"Target_value\": Target_value,\n        \"Years\"\
+          : Years,\n        \"Initial_investment\": Initial_investment\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          Initial_investment:
+            children: null
+            type: string
+          Target_value:
+            children: null
+            type: string
+          Years:
+            children: null
+            type: string
+        selected: false
+        title: 解析三个输出
+        type: code
+        variables:
+        - value_selector:
+          - conversation
+          - captured_info
+          variable: captured_info
+      height: 54
+      id: '1735184419289'
+      position:
+        x: -22.30391323073127
+        y: -132.0712917959381
+      positionAbsolute:
+        x: -22.30391323073127
+        y: -132.0712917959381
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: 将输入变量 转化为数值型变量，单位为标准数字格式。
+        model:
+          completion_params:
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        parameters:
+        - description: 目标资金的数值性变量
+          name: Target_value_num
+          required: false
+          type: number
+        query:
+        - '1735184419289'
+        - Target_value
+        reasoning_mode: prompt
+        selected: false
+        title: 参数提取器_TV
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1735184949377'
+      position:
+        x: 337.4887443642225
+        y: -544.6879350158852
+      positionAbsolute:
+        x: 337.4887443642225
+        y: -544.6879350158852
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: 将输入变量 转化为数值型变量，单位为年。
+        model:
+          completion_params:
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        parameters:
+        - description: 投资年限的数值型变量
+          name: Years_num
+          required: false
+          type: number
+        query:
+        - '1735184419289'
+        - Years
+        reasoning_mode: prompt
+        selected: false
+        title: 参数提取器 2_Ys
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1735185231558'
+      position:
+        x: 337.4887443642225
+        y: -393.7604989841348
+      positionAbsolute:
+        x: 337.4887443642225
+        y: -393.7604989841348
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: 将输入变量 转化为数值型变量，单位为标准数字格式。
+        model:
+          completion_params:
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        parameters:
+        - description: 初始资金的数值型变量
+          name: Initial_Investment_num
+          required: false
+          type: number
+        query:
+        - '1735184419289'
+        - Initial_investment
+        reasoning_mode: prompt
+        selected: false
+        title: 参数提取器 3_IV
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1735185358990'
+      position:
+        x: 328.5127688018965
+        y: -222.184796295627
+      positionAbsolute:
+        x: 328.5127688018965
+        y: -222.184796295627
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - Target_value
+        desc: ''
+        input_variable_selector:
+        - '1735184949377'
+        - Target_value_num
+        selected: false
+        title: 变量赋值 6
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '1735185434875'
+      position:
+        x: 672.3048989885315
+        y: -533.8879629471871
+      positionAbsolute:
+        x: 672.3048989885315
+        y: -533.8879629471871
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - Years
+        desc: ''
+        input_variable_selector:
+        - '1735185231558'
+        - Years_num
+        selected: false
+        title: 变量赋值 7
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '1735185449858'
+      position:
+        x: 672.3048989885315
+        y: -393.7604989841348
+      positionAbsolute:
+        x: 672.3048989885315
+        y: -393.7604989841348
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - Initial_Investment
+        desc: ''
+        input_variable_selector:
+        - '1735185358990'
+        - Initial_Investment_num
+        selected: false
+        title: 变量赋值 8
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '1735185477205'
+      position:
+        x: 672.3048989885315
+        y: -222.184796295627
+      positionAbsolute:
+        x: 672.3048989885315
+        y: -222.184796295627
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '感谢您的信息，我们已经收集完毕并在后台进行处理。
+
+          下面是风险评估测试，请回复您的答案。
+
+          第一题：In general, how would your best friend describe you as a risk taker?
+
+          A real gambler
+
+          B. Willing to take risks after completing adequate research
+
+          C. Cautious
+
+          D. A real risk avoider"'
+        desc: ''
+        selected: false
+        title: 直接回复 5
+        type: answer
+        variables: []
+      height: 212
+      id: '1735201987962'
+      position:
+        x: 1363.2934686056578
+        y: -664.1871448731312
+      positionAbsolute:
+        x: 1363.2934686056578
+        y: -664.1871448731312
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 4f2d355f-109f-4bb5-ab1e-4e2577e850b2
+            value: ''
+            varType: number
+            variable_selector:
+            - conversation
+            - Target_value
+          - comparison_operator: not empty
+            id: 152fa14a-4639-4311-8c3d-6bc588a146d1
+            value: ''
+            varType: number
+            variable_selector:
+            - conversation
+            - Years
+          - comparison_operator: not empty
+            id: 0add3882-bf40-4289-ad61-dba40e2f303f
+            value: ''
+            varType: number
+            variable_selector:
+            - conversation
+            - Initial_Investment
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 2 (1)
+        type: if-else
+      height: 178
+      id: '17352023906520'
+      position:
+        x: -1245.767157421352
+        y: -132.0712917959381
+      positionAbsolute:
+        x: -1245.767157421352
+        y: -132.0712917959381
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import random\nimport math\n\ndef main(\n    initial_investment: float,\n\
+          \    years: float,\n    target_value: float,\n    risk_value: float,\n \
+          \   mean_returns=[0.10, 0.04, 0.06],\n    cov_matrix=[[0.1, 0.03, 0.05],\
+          \ [0.03, 0.02, 0.01], [0.05, 0.01, 0.04]],\n    num_simulations=50000\n\
+          ) -> dict:\n    \"\"\"\n    使用蒙特卡罗模拟计算投资组合指标，输出随机权重、平均期末价值、波动率和目标达成概率。\n\
+          \n    参数：\n    - initial_investment (float): 初始投资金额。\n    - years (float):\
+          \ 投资年限。\n    - target_value (float): 目标期末值。\n    - risk_value (float): 用户可承受的资产波动率上限。\n\
+          \    - mean_returns (list): 各资产的年化收益率。\n    - cov_matrix (list of lists):\
+          \ 收益率的协方差矩阵。\n    - num_simulations (int): 模拟次数。\n\n    返回：\n    - dict:\
+          \ 包含随机生成的权重、模拟的投资组合期末价值均值、波动率，以及目标达成概率。\n    \"\"\"\n    \n    def dot_product(vec1,\
+          \ vec2):\n        return sum(a * b for a, b in zip(vec1, vec2))\n\n    def\
+          \ matrix_vector_multiply(matrix, vector):\n        return [dot_product(row,\
+          \ vector) for row in matrix]\n\n    def portfolio_volatility(weights, cov_matrix):\n\
+          \        intermediate = matrix_vector_multiply(cov_matrix, weights)\n  \
+          \      return math.sqrt(dot_product(weights, intermediate))\n\n    def random_weights(size):\n\
+          \        values = [random.random() for _ in range(size)]\n        total\
+          \ = sum(values)\n        return [v / total for v in values]\n\n    def multivariate_normal(mean,\
+          \ cov, size):\n        samples = []\n        for _ in range(size):\n   \
+          \         sample = [random.gauss(mean[i], math.sqrt(cov[i][i])) for i in\
+          \ range(len(mean))]\n            samples.append(sample)\n        return\
+          \ samples\n\n    # 符合风险限制的随机权重生成\n    max_attempts = 1000  # 限制生成尝试次数，避免死循环\n\
+          \    for attempt in range(max_attempts):\n        weights = random_weights(len(mean_returns))\
+          \  # 随机生成权重\n        portfolio_std = portfolio_volatility(weights, cov_matrix)\
+          \  # 计算组合波动率\n\n        # 如果组合波动率符合风险限制，退出循环\n        if portfolio_std <=\
+          \ risk_value:\n            break\n    else:\n        # 超过最大尝试次数仍未生成符合要求的权重\n\
+          \        return {\n            \"error\": f\"无法在风险限制 {risk_value:.2f} 内生成符合条件的权重。\"\
+          \n        }\n\n    # 模拟终值存储\n    final_values = []\n    for _ in range(num_simulations):\n\
+          \        yearly_returns = multivariate_normal(mean_returns, cov_matrix,\
+          \ years)\n        portfolio_growth = 1\n        for yearly_return in yearly_returns:\n\
+          \            portfolio_growth *= 1 + dot_product(yearly_return, weights)\n\
+          \        final_values.append(initial_investment * portfolio_growth)\n\n\
+          \    # 计算指标\n    mean_value = sum(final_values) / len(final_values)  # 平均期末价值\n\
+          \    std_value = math.sqrt(\n        sum((x - mean_value) ** 2 for x in\
+          \ final_values) / len(final_values)\n    )  # 投资组合波动率\n    target_probability\
+          \ = sum(1 for x in final_values if x >= target_value) / len(final_values)\
+          \ * 100  # 达成目标的概率（百分比）\n    volatility_percent_mean = (std_value / mean_value)\
+          \ * 100\n\n    # 返回结果\n    return {\n        \"mean_final_value\": round(mean_value,\
+          \ 2),\n        \"portfolio_volatility\": round(std_value, 2),\n        \"\
+          volatility_percent_mean\": round(volatility_percent_mean, 2),\n        \"\
+          target_achievement_probability\": round(target_probability, 2),\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          mean_final_value:
+            children: null
+            type: number
+          portfolio_volatility:
+            children: null
+            type: number
+          target_achievement_probability:
+            children: null
+            type: number
+          volatility_percent_mean:
+            children: null
+            type: number
+        selected: false
+        title: 蒙特卡洛模拟
+        type: code
+        variables:
+        - value_selector:
+          - conversation
+          - Target_value
+          variable: target_value
+        - value_selector:
+          - conversation
+          - Years
+          variable: years
+        - value_selector:
+          - conversation
+          - Initial_Investment
+          variable: initial_investment
+        - value_selector:
+          - conversation
+          - risk_value
+          variable: risk_value
+      height: 54
+      id: '1735204551140'
+      position:
+        x: 1643.3539516120436
+        y: 350.0730072939061
+      positionAbsolute:
+        x: 1643.3539516120436
+        y: 350.0730072939061
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1735267153117.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 6
+        type: answer
+        variables: []
+      height: 103
+      id: '1735204966811'
+      position:
+        x: 2279.1905058354664
+        y: 366.9537614077794
+      positionAbsolute:
+        x: 2279.1905058354664
+        y: 366.9537614077794
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: b46cdd42-0ac8-4b46-8ec2-f3c221cfc205
+          role: system
+          text: "你是一位专业的投资顾问助手，需要协助用户进行投资目标规划和风险评估。你的主要任务是分析用户的输入信息、解释蒙特卡洛模拟的结果，并根据用户的投资目标、初始资金和投资年限等信息提供明确的建议。\
+            \  \n\n#### 工作原则：  \n1. **解释结果：**  \n   - 使用专业且易懂的语言向用户解释模拟的关键指标，包括： \
+            \ \n     - 达成目标的概率（以百分比表示）：\n     {{#1735204551140.target_achievement_probability#}}%。\
+            \  \n     - 模拟的平均期末收益（以金额表示）{{#1735204551140.mean_final_value#}}。  \n\
+            \     - 收益的波动率（以百分比表示）{{#1735204551140.volatility_percent_mean#}}。  \n\
+            \   - 如果达成目标的概率大于或等于 70%，说明当前目标设置较为合理；否则，需建议用户调整目标。  \n\n2. **提供建议：**\
+            \  \n   - 针对达成目标概率不足 70% 的情况，结合用户的当前投资信息，提供以下调整建议：  \n     - 减少目标金额（给出合理的参考值）。\
+            \  \n     - 延长投资年限（建议延长的时间范围）。  \n     - 增加初始资金（给出增加的金额建议）。  \n\n3. **引导用户互动：**\
+            \  \n   - 提醒用户可以修改目标金额{{#conversation.Target_value#}}、投资年限{{#conversation.Years#}}或初始资金{{#conversation.Initial_Investment#}}。\
+            \  \n   - 如果用户反馈具体问题，需针对性地回答，并引导用户进行下一步规划。\n\n4. **语言风格：**  \n   - 保持语气专业、友善、清晰。\
+            \  \n   - 避免使用复杂术语，确保非专业用户也能理解。  \n\n#### 模型需要完成的任务：  \n根据用户输入的模拟结果和投资信息，按照上述原则进行分析，并输出以下内容：\
+            \  \n1. 对模拟结果的清晰解释。  \n2. 针对当前投资目标的合理性评估。  \n3. 根据评估结果提供具体且合理的建议。  \n\
+            4. 引导用户进入下一步操作。  \n\n**注意：**  \n始终基于用户提供的信息和模拟结果进行分析，不得随意添加主观推测或未经验证的信息。\
+            \  "
+        selected: false
+        title: 结果分析
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1735267153117'
+      position:
+        x: 1935.62125538892
+        y: 366.9537614077794
+      positionAbsolute:
+        x: 1935.62125538892
+        y: 366.9537614077794
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - target_achievement_probability
+        desc: ''
+        input_variable_selector:
+        - '1735204551140'
+        - target_achievement_probability
+        selected: false
+        title: 变量赋值 9
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '1735269032922'
+      position:
+        x: 1917.6736079775333
+        y: 163.6667790354726
+      positionAbsolute:
+        x: 1917.6736079775333
+        y: 163.6667790354726
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: bf619df9-93e9-44a5-920b-2dfb1d4e5a68
+            value: ''
+            varType: number
+            variable_selector:
+            - conversation
+            - target_achievement_probability
+          id: 'true'
+          logical_operator: or
+        desc: ''
+        selected: false
+        title: 条件分支 4
+        type: if-else
+      height: 126
+      id: '1735269189290'
+      position:
+        x: -1652.6933055976376
+        y: -132.0712917959381
+      positionAbsolute:
+        x: -1652.6933055976376
+        y: -132.0712917959381
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: <
+            id: 02b75d98-4741-4dc3-804f-9a9625abbd7e
+            value: '70'
+            varType: number
+            variable_selector:
+            - conversation
+            - target_achievement_probability
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 5
+        type: if-else
+      height: 126
+      id: '1735269317905'
+      position:
+        x: -1661.126997513446
+        y: 151.5913985892128
+      positionAbsolute:
+        x: -1661.126997513446
+        y: 151.5913985892128
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: ''
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 5ba7fdb7-5e74-463a-91f0-f84a6a7b8ecc
+          role: system
+          text: '你是一位专业的财富管理助理，负责帮助用户动态更新投资目标信息。在每轮交互中，你需要根据用户的输入分析并重新构建 captured_info，其内容包括目标金额
+            Target_value、计划年限 Years 和初始资金 Initial_investment。
+
+
+            输入格式：
+
+
+            • 用户的输入内容。
+
+            • 三个全局变量：
+
+            • Target_value: 现有的目标金额。{{#conversation.Target_value#}}
+
+            • Years: 现有的计划年限。 {{#conversation.Years#}}
+
+            • Initial_investment: 现有的初始资金。 {{#conversation.Initial_Investment#}}
+
+
+
+            输出要求：
+
+
+            • 格式严格要求： 输出内容必须严格按照以下 JSON 结构，且不能包含任何多余的文本或解释。
+
+            {
+
+              "think": "这里填写对用户输入的分析与推断。",
+
+              "captured_info": {
+
+                "Target_value": "这里填写目标金额",
+
+                "Years": "这里填写计划年限",
+
+                "Initial_investment": "这里填写初始资金"
+
+              },
+
+              "next_question": "这里填写补充问题或为 null"
+
+            }
+
+
+            注意：
+
+
+            1. 仅输出 JSON 格式，不能包含 JSON 外的任何其他文本或注释。
+
+            2. 如果信息完整，则 next_question 返回 null。
+
+            3. 如果用户输入与当前任务无关，需要在 think 中明确指出，并在 next_question 中引导用户回到任务目标。
+
+            4. 严格遵守格式，任何其他内容将被视为错误。
+
+
+            示例：
+
+
+            示例 1：用户输入更新了目标金额
+
+
+            输入：
+
+            用户输入：
+
+            “我现在的目标是存到500万。”
+
+            全局变量：
+
+            {
+
+              "Target_value": "300万",
+
+              "Years": "10年",
+
+              "Initial_investment": "50万"
+
+            }
+
+            输出：
+
+            {
+
+              "think": "用户明确提供了新的目标金额（500万），需要更新目标金额字段。",
+
+              "captured_info": {
+
+                "Target_value": "500万",
+
+                "Years": "10年",
+
+                "Initial_investment": "50万"
+
+              },
+
+              "next_question": null
+
+            }
+
+
+            示例 2：用户输入更新了投资年限
+
+
+            输入：
+
+            用户输入：
+
+            “我打算把计划缩短到5年。”
+
+            全局变量：
+
+            {
+
+              "Target_value": "500万",
+
+              "Years": "10年",
+
+              "Initial_investment": "50万"
+
+            }
+
+
+            输出：
+
+            {
+
+              "think": "用户明确提供了新的投资年限（5年），需要更新年限字段。",
+
+              "captured_info": {
+
+                "Target_value": "500万",
+
+                "Years": "5年",
+
+                "Initial_investment": "50万"
+
+              },
+
+              "next_question": null
+
+            }
+
+
+            示例 3：用户输入无关信息
+
+
+            输入：
+
+            用户输入：
+
+            “现在投资股票能赚钱吗？”
+
+            全局变量：
+
+            {
+
+              "Target_value": "500万",
+
+              "Years": "10年",
+
+              "Initial_investment": "50万"
+
+            }
+
+
+            输出：
+
+
+            {
+
+              "think": "用户输入与当前任务无关，需要引导用户回到任务目标。",
+
+              "captured_info": {
+
+                "Target_value": "500万",
+
+                "Years": "10年",
+
+                "Initial_investment": "50万"
+
+              },
+
+              "next_question": "请问您是否有其他需要调整的目标金额、年限或初始资金？"
+
+            }
+
+
+            示例 4：用户重复提供已知信息
+
+
+            输入：
+
+            用户输入：
+
+            “我的目标还是500万。”
+
+            全局变量：
+
+            {
+
+              "Target_value": "500万",
+
+              "Years": "10年",
+
+              "Initial_investment": "50万"
+
+            }
+
+
+            输出：
+
+
+            {
+
+              "think": "用户重复提供了已知的目标金额（500万），无需更新。",
+
+              "captured_info": {
+
+                "Target_value": "500万",
+
+                "Years": "10年",
+
+                "Initial_investment": "50万"
+
+              },
+
+              "next_question": null
+
+            }
+
+
+            示例 5：用户输入模糊信息
+
+
+            输入：
+
+            用户输入：
+
+            “我想改一下计划。”
+
+            全局变量：
+
+            {
+
+              "Target_value": "500万",
+
+              "Years": "10年",
+
+              "Initial_investment": "50万"
+
+            }
+
+
+            输出：
+
+
+            {
+
+              "think": "用户提供的信息模糊，未明确说明需要修改的具体字段。",
+
+              "captured_info": {
+
+                "Target_value": "500万",
+
+                "Years": "10年",
+
+                "Initial_investment": "50万"
+
+              },
+
+              "next_question": "请问您是希望修改目标金额、投资年限还是初始资金？例如，您是希望把目标金额调整为600万吗？"
+
+            }
+
+
+
+            通过这种方式，你可以直接复制所有示例到你的系统中进行验证。'
+        selected: false
+        title: 信息更新
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1735271615576'
+      position:
+        x: -1668.7228235597772
+        y: 417.27126535901476
+      positionAbsolute:
+        x: -1668.7228235597772
+        y: 417.27126535901476
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(json_str: str) -> dict:\n    # 获取嵌套 JSON 字符串\n\
+          \    json_str = json_str.replace(\" \", \" \")\n    nested_data = json.loads(json_str)\n\
+          \    \n    \n    # 提取 captured_info 和 next_question\n    captured_info =\
+          \ nested_data.get(\"captured_info\", {})\n    next_question = nested_data.get(\"\
+          next_question\", None)\n    \n    # 返回结果\n    return {\n        \"captured_info\"\
+          : captured_info,\n        \"next_question\": next_question\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          captured_info:
+            children: null
+            type: object
+          next_question:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 3 (1)
+        type: code
+        variables:
+        - value_selector:
+          - '1735271615576'
+          - text
+          variable: json_str
+      height: 54
+      id: '17352845716900'
+      position:
+        x: -1668.7228235597772
+        y: 609.1417836931441
+      positionAbsolute:
+        x: -1668.7228235597772
+        y: 609.1417836931441
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: empty
+            id: d0960942-81eb-44b0-9e7b-da81aaf8cb80
+            value: ''
+            varType: string
+            variable_selector:
+            - '17352845716900'
+            - next_question
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 6
+        type: if-else
+      height: 126
+      id: '1735284588987'
+      position:
+        x: -1324.256018020199
+        y: 736.3689473497175
+      positionAbsolute:
+        x: -1324.256018020199
+        y: 736.3689473497175
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#17352845716900.next_question#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 7
+        type: answer
+        variables: []
+      height: 103
+      id: '1735284623598'
+      position:
+        x: -1032.4324728430827
+        y: 565.7106136829502
+      positionAbsolute:
+        x: -1032.4324728430827
+        y: 565.7106136829502
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - captured_info
+        desc: ''
+        input_variable_selector:
+        - '17352845716900'
+        - captured_info
+        selected: false
+        title: captured_info (1)
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '17352846644760'
+      position:
+        x: -1668.7228235597772
+        y: 736.3689473497175
+      positionAbsolute:
+        x: -1668.7228235597772
+        y: 736.3689473497175
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        author: OGG4REAL
+        desc: ''
+        height: 113
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"Info
+          Refine after CPA","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 274
+      height: 113
+      id: '1735286830178'
+      position:
+        x: -1511.4272344739295
+        y: 912.9177503630214
+      positionAbsolute:
+        x: -1511.4272344739295
+        y: 912.9177503630214
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 274
+    - data:
+        code: "def main(captured_info: object) -> dict:\n    \"\"\"\n    解析 captured_info\
+          \ 对象并提取 Target_value, Years 和 Initial_investment。\n\n    Args:\n       \
+          \ captured_info (object): 包含投资目标金额、年限和初始资金的对象。\n\n    Returns:\n       \
+          \ object: 包含解析后的 Target_value, Years 和 Initial_investment 的对象。\n    \"\"\
+          \"\n    # 默认值\n    Target_value = captured_info.get(\"Target_value\", None)\n\
+          \    Years = captured_info.get(\"Years\", None)\n    Initial_investment\
+          \ = captured_info.get(\"Initial_investment\", None)\n\n    # 返回解析结果\n  \
+          \  return {\n        \"Target_value\": Target_value,\n        \"Years\"\
+          : Years,\n        \"Initial_investment\": Initial_investment\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          Initial_investment:
+            children: null
+            type: string
+          Target_value:
+            children: null
+            type: string
+          Years:
+            children: null
+            type: string
+        selected: false
+        title: 解析三个输出 (1)
+        type: code
+        variables:
+        - value_selector:
+          - conversation
+          - captured_info
+          variable: captured_info
+      height: 54
+      id: '17352868824950'
+      position:
+        x: -1027.5958240098837
+        y: 1086.9164190125487
+      positionAbsolute:
+        x: -1027.5958240098837
+        y: 1086.9164190125487
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: 将输入变量 转化为数值型变量，单位为标准数字格式。
+        model:
+          completion_params:
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        parameters:
+        - description: 目标资金的数值性变量
+          name: Target_value_num
+          required: false
+          type: number
+        query:
+        - '17352868824950'
+        - Target_value
+        reasoning_mode: prompt
+        selected: false
+        title: 参数提取器_TV (1)
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '17352869199450'
+      position:
+        x: -590.323628031629
+        y: 1223.6895141020548
+      positionAbsolute:
+        x: -590.323628031629
+        y: 1223.6895141020548
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: 将输入变量 转化为数值型变量，单位为年。
+        model:
+          completion_params:
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        parameters:
+        - description: 投资年限的数值型变量
+          name: Years_num
+          required: false
+          type: number
+        query:
+        - '17352868824950'
+        - Years
+        reasoning_mode: prompt
+        selected: false
+        title: 参数提取器 2_Ys (1)
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '17352869263600'
+      position:
+        x: -590.323628031629
+        y: 1070.7016928131738
+      positionAbsolute:
+        x: -590.323628031629
+        y: 1070.7016928131738
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: 将输入变量 转化为数值型变量，单位为标准数字格式。
+        model:
+          completion_params:
+            temperature: 0
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        parameters:
+        - description: 初始资金的数值型变量
+          name: Initial_Investment_num
+          required: false
+          type: number
+        query:
+        - '17352868824950'
+        - Initial_investment
+        reasoning_mode: prompt
+        selected: false
+        title: 参数提取器 3_IV (1)
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '17352869303110'
+      position:
+        x: -582.5787255683291
+        y: 836.2254241137132
+      positionAbsolute:
+        x: -582.5787255683291
+        y: 836.2254241137132
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - Target_value
+        desc: ''
+        input_variable_selector:
+        - '17352869199450'
+        - Target_value_num
+        selected: false
+        title: 变量赋值 6 (1)
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '17352869819430'
+      position:
+        x: -218.5860002935482
+        y: 1223.6895141020548
+      positionAbsolute:
+        x: -218.5860002935482
+        y: 1223.6895141020548
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - Years
+        desc: ''
+        input_variable_selector:
+        - '17352869263600'
+        - Years_num
+        selected: false
+        title: 变量赋值 7 (1)
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '17352869856580'
+      position:
+        x: -237.74038153696875
+        y: 1030.105872114858
+      positionAbsolute:
+        x: -237.74038153696875
+        y: 1030.105872114858
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        assigned_variable_selector:
+        - conversation
+        - Initial_Investment
+        desc: ''
+        input_variable_selector:
+        - '17352869303110'
+        - Initial_Investment_num
+        selected: false
+        title: 变量赋值 8 (1)
+        type: assigner
+        write_mode: over-write
+      height: 132
+      id: '17352869885610'
+      position:
+        x: -218.5860002935482
+        y: 836.2254241137132
+      positionAbsolute:
+        x: -218.5860002935482
+        y: 836.2254241137132
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import numpy as np\n\ndef main(\n    initial_investment:float,\n  \
+          \  years:float,\n    target_value:float,\n    mean_returns=[0.08, 0.04,\
+          \ 0.06],\n    cov_matrix=[[0.1, 0.03, 0.05], [0.03, 0.02, 0.01], [0.05,\
+          \ 0.01, 0.04]],\n    num_simulations=10000\n) -> dict:\n    \"\"\"\n   \
+          \ 使用蒙特卡罗模拟计算投资组合指标，输出随机权重、平均期末价值、波动率和目标达成概率。\n\n    参数：\n    - mean_returns\
+          \ (list): 各资产的年化收益率。\n    - cov_matrix (list of lists): 收益率的协方差矩阵。\n   \
+          \ - initial_investment (float): 初始投资金额。\n    - years (int): 投资年限。\n    -\
+          \ target_value (float): 目标期末值。\n    - num_simulations (int): 模拟次数。\n\n \
+          \   返回：\n    - dict: 包含随机生成的权重、模拟的投资组合期末价值均值、波动率，以及目标达成概率。\n    \"\"\"\n\
+          \n    # 随机生成权重\n    weights = np.random.dirichlet(np.ones(len(mean_returns)),\
+          \ size=1)[0]\n\n    # 模拟终值存储\n    final_values = []\n\n    for _ in range(num_simulations):\n\
+          \        # 随机生成资产年回报率路径\n        yearly_returns = np.random.multivariate_normal(mean_returns,\
+          \ cov_matrix, years)\n        portfolio_growth = np.prod(1 + np.dot(yearly_returns,\
+          \ weights))  # 累计增长\n        final_values.append(initial_investment * portfolio_growth)\n\
+          \n    # 计算指标\n    final_values = np.array(final_values)\n    mean_value\
+          \ = np.mean(final_values)  # 平均期末价值\n    std_value = np.std(final_values)\
+          \  # 投资组合波动率\n    target_probability = np.mean(final_values >= target_value)\
+          \ * 100  # 达成目标的概率（百分比）\n    volatility_percent_mean = (std_value / mean_value)\
+          \ * 100\n\n    # 返回结果\n    return {\n        \"random_weights\": {\n   \
+          \         \"stocks\": round(weights[0], 2),\n            \"bonds\": round(weights[1],\
+          \ 2),\n            \"REITs\": round(weights[2], 2),\n        },\n      \
+          \  \"mean_final_value\": round(mean_value, 2),\n        \"portfolio_volatility\"\
+          : round(std_value, 2),\n        \"volatility_percent_mean\": round(volatility_percent_mean,2),\n\
+          \        \"target_achievement_probability\": round(target_probability, 2),\n\
+          \    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          mean_final_value:
+            children: null
+            type: number
+          portfolio_volatility:
+            children: null
+            type: number
+          random_weights:
+            children: null
+            type: object
+          target_achievement_probability:
+            children: null
+            type: number
+          volatility_percent_mean:
+            children: null
+            type: number
+        selected: false
+        title: 蒙特卡洛模拟 (1)
+        type: code
+        variables:
+        - value_selector:
+          - conversation
+          - Target_value
+          variable: target_value
+        - value_selector:
+          - conversation
+          - Years
+          variable: years
+        - value_selector:
+          - conversation
+          - Initial_Investment
+          variable: initial_investment
+      height: 54
+      id: '17352870777090'
+      position:
+        x: 229.39984079913597
+        y: 1040.5537164294508
+      positionAbsolute:
+        x: 229.39984079913597
+        y: 1040.5537164294508
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: b46cdd42-0ac8-4b46-8ec2-f3c221cfc205
+          role: system
+          text: "你是一位专业的投资顾问助手，需要协助用户进行投资目标规划和风险评估。你的主要任务是分析用户的输入信息、解释蒙特卡洛模拟的结果，并根据用户的投资目标、初始资金和投资年限等信息提供明确的建议。\
+            \  \n\n#### 工作原则：  \n1. **解释结果：**  \n   - 使用专业且易懂的语言向用户解释模拟的关键指标，包括： \
+            \ \n     - 达成目标的概率（以百分比表示）：{{#17352870777090.target_achievement_probability#}}。\
+            \  \n     - 模拟的平均期末收益（以金额表示）{{#17352870777090.mean_final_value#}}。  \n\
+            \     - 收益的波动率（以百分比表示）{{#17352870777090.volatility_percent_mean#}}。  \n\
+            \   - 如果达成目标的概率大于或等于 70%，说明当前目标设置较为合理；否则，需建议用户调整目标。  \n\n2. **提供建议：**\
+            \  \n   - 针对达成目标概率不足 70% 的情况，结合用户的当前投资信息，提供以下调整建议：  \n     - 减少目标金额（给出合理的参考值）。\
+            \  \n     - 延长投资年限（建议延长的时间范围）。  \n     - 增加初始资金（给出增加的金额建议）。  \n\n3. **引导用户互动：**\
+            \  \n   - 提醒用户可以修改目标金额{{#conversation.Target_value#}}、投资年限{{#conversation.Years#}}或初始资金{{#conversation.Initial_Investment#}}。\
+            \  \n   - 如果用户反馈具体问题，需针对性地回答，并引导用户进行下一步规划。\n\n4. **语言风格：**  \n   - 保持语气专业、友善、清晰。\
+            \  \n   - 避免使用复杂术语，确保非专业用户也能理解。  \n\n#### 模型需要完成的任务：  \n根据用户输入的模拟结果和投资信息，按照上述原则进行分析，并输出以下内容：\
+            \  \n1. 对模拟结果的清晰解释。  \n2. 针对当前投资目标的合理性评估。  \n3. 根据评估结果提供具体且合理的建议。  \n\
+            4. 引导用户进入下一步操作。  \n\n**注意：**  \n始终基于用户提供的信息和模拟结果进行分析，不得随意添加主观推测或未经验证的信息。\
+            \  "
+        selected: false
+        title: 结果分析 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '17352871123770'
+      position:
+        x: 634.0709945065526
+        y: 1040.5537164294508
+      positionAbsolute:
+        x: 634.0709945065526
+        y: 1040.5537164294508
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#17352871123770.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 8
+        type: answer
+        variables: []
+      height: 103
+      id: '1735287134290'
+      position:
+        x: 938.0709945065526
+        y: 1040.5537164294508
+      positionAbsolute:
+        x: 938.0709945065526
+        y: 1040.5537164294508
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        author: OGG4REAL
+        desc: ''
+        height: 141
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"更新用户输入迭代模拟直到模拟结果成功率超过
+          70%","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 334
+      height: 141
+      id: '1735287172709'
+      position:
+        x: 205.39632791526566
+        y: 853.965037096579
+      positionAbsolute:
+        x: 205.39632791526566
+        y: 853.965037096579
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 334
+    - data:
+        author: OGG4REAL
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"用户信息收集和信息提取，使用大模型抽象出投顾模块所需的输入","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 506
+      height: 88
+      id: '1735289779206'
+      position:
+        x: -481.793257281371
+        y: -280.69229980631053
+      positionAbsolute:
+        x: -481.793257281371
+        y: -280.69229980631053
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 506
+    - data:
+        author: OGG4REAL
+        desc: ''
+        height: 95
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"投顾模块涉及到精细的量化输入使用大模型智能处理我们所需的三类输入","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 320
+      height: 95
+      id: '1735289817549'
+      position:
+        x: 476.02099932612117
+        y: -664.1871448731312
+      positionAbsolute:
+        x: 476.02099932612117
+        y: -664.1871448731312
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 320
+    - data:
+        author: OGG4REAL
+        desc: ''
+        height: 104
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"关键输入通过全局变量维护，方便提取和后续修改","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 240
+      height: 104
+      id: '1735290013768'
+      position:
+        x: 1036.5867932438725
+        y: -533.8879629471871
+      positionAbsolute:
+        x: 1036.5867932438725
+        y: -533.8879629471871
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        answer: 恭喜您，我们下面开始为您构筑您的资产组合...
+        desc: ''
+        selected: false
+        title: 直接回复 9
+        type: answer
+        variables: []
+      height: 116
+      id: '1735808838926'
+      position:
+        x: -1324.256018020199
+        y: 145.13451319902305
+      positionAbsolute:
+        x: -1324.256018020199
+        y: 145.13451319902305
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: empty
+            id: 003eae97-a38f-4348-b60a-c7010f34d14d
+            value: ''
+            varType: string
+            variable_selector:
+            - '1733796492475'
+            - error
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 7
+        type: if-else
+      height: 126
+      id: '1735870544062'
+      position:
+        x: -754.3777302971309
+        y: 366.9537614077794
+      positionAbsolute:
+        x: -754.3777302971309
+        y: 366.9537614077794
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1733796492475.error#}}
+
+          Current Question:
+
+          {{#1733796492475.next_question_text#}}
+
+          {{#1733796492475.next_question_options#}}
+
+          Questions Remain:{{#1733796492475.questions_remaining_count#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 10
+        type: answer
+        variables: []
+      height: 190
+      id: '1735870633012'
+      position:
+        x: -400.86947352501875
+        y: 604.5123486195868
+      positionAbsolute:
+        x: -400.86947352501875
+        y: 604.5123486195868
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        author: OGG4REAL
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"用captured_info捕捉三要素","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 240
+      height: 88
+      id: '1735874872181'
+      position:
+        x: -924.0716599376271
+        y: -242.05011800380956
+      positionAbsolute:
+        x: -924.0716599376271
+        y: -242.05011800380956
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: OGG4REAL
+        desc: ''
+        height: 89
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"风险测评分数转化为资产波动率","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 262
+      height: 89
+      id: '1735876163165'
+      position:
+        x: 387.1459517903545
+        y: 319.3117130763684
+      positionAbsolute:
+        x: 387.1459517903545
+        y: 319.3117130763684
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 262
+    viewport:
+      x: -131.431975105755
+      y: 18.285242278773637
+      zoom: 0.5344512898389381
